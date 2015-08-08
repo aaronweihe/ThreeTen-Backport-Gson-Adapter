@@ -19,6 +19,19 @@ Gson gson = ThreeTenGsonAdapter.registerLocalTime(builder).create();
 
 If you need all of the supported types, there's a convenient method: `ThreeTenGsonAdapter.registerAll()`.
 
+Build
+-----
+
+To build:
+
+````bash
+$ git clone git@github.com:aaronhe42/ThreeTen-Backport-Gson-Adapter.git
+$ cd ThreeTen-Backport-Gson-Adapter/
+$ ./gradlew build
+```
+
+[![Build Status](https://travis-ci.org/aaronhe42/ThreeTen-Backport-Gson-Adapter.svg?branch=master)](https://travis-ci.org/aaronhe42/ThreeTen-Backport-Gson-Adapter)
+
 License
 -------
 
