@@ -1,4 +1,4 @@
-package com.aaronhe.threetengson;
+package org.aaronhe.threetengson;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
