@@ -1,10 +1,19 @@
 group 'org.aaronhe.threetenbp-gson-adapter'
-version '1.0-SNAPSHOT'
+version '1.0.0-SNAPSHOT'
 
 apply plugin: 'java'
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+    }
+}
+
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -13,3 +22,5 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
 }
+
+apply from: rootProject.file('gradle/publish.gradle')

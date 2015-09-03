@@ -66,6 +66,8 @@ public class ThreeTenGsonAdapter {
 
     /**
      * A convenient method to register all supported ThreeTen BP types.
+     * @param gsonBuilder a GsonBuilder to be registered.
+     * @return a GsonBuilder knows how to de/serialize all supported ThreeTen BP types.
      */
     public static GsonBuilder registerAll(GsonBuilder gsonBuilder) {
         registerInstant(gsonBuilder);

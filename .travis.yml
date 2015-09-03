@@ -1,13 +1,19 @@
 language: java
-
 jdk:
-  - oraclejdk7
+- oraclejdk7
 
 # as per http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
 sudo: false
 
+after_success:
+  - .buildscript/deploy_snapshot.sh
+
 # cache between builds
 cache:
   directories:
-  - $HOME/.m2
-  - $HOME/.gradle
+  - "$HOME/.m2"
+  - "$HOME/.gradle"
+env:
+  global:
+  - secure: cmO5uL8X5RRzZ9e86NQAuSXGfKYFnCmosA4lBJmqMMA/OIG/80RXVgqtlwIVn91/NIDzMb0bvzXA5RorcQTwHhbzOboaLLNsWVbEUwUsGwjdDfjcfZtEkrkGslQzfYDMoBcYPcb9RAmoKfWTAOlR66DlaU0gIqrOKcWgsQVN1dvRQu1d2PYpv8dsW2dBzuZUKJPSHwi2rh3w+Dz7PC35TcxIzV8GvOVfvYe7z0JCzM8P5XJkzCBkzc/bfKdWieUIQYjbb3BLUhP25+xUys1YN9OlW6ZU23aM16mkfZ+Ll7hH480tELX/fgh77iB0os47hhFpHtP1y+meX0x+SUorgI4/Gf+++uRCrIn13npRD34sLGFrju8hdJ8oksLPy+4OOeXOg8Fp9vl9Hx6YwxANj/nElROJWiv68n8qqA+ocj02uGlaw5U0To0QiaT+veJncPpoESTVQ2kyQ+Jw2e6iB2E39lLGKPCpA9Pk6KjgwT10MJpUSMqGBkby47U/mTgYit7aSai91WD8dsAo22D8V8RzioeE79svT2qYAptPotrLO3Bi96/0aQJfFugQ8HcviwV4zO4zhIVlYN/O514f9UP67dRsNH2+buJ98wNwbQc7FWA9pb5FK9zVBspYZH/4YPJSjH2J2wfJHc8vq2RTTirfNT+WMA87VBQaKY9zONU=
+  - secure: Wsa9nOEdO8zINAaeuQSqJt9z5isJ8reNzIXRRsIyQbAfTYrIRZjDb5uKODDt8PEbolDkrtD/9dHCrOShFPdFhc7yNXaVCIOFWp5rfRTIjQrPV0L4Jug0pLv+SYlSqiByKNDqJMhIdQUTcmDWQ6DL3CmHc8E5AXCV9ZqHbbVlHjhfCNz/kfpt4NuwlKbxdxXdUSzFN/vSMlo/3DZGqJm6sqb+yv1AY1pFsOfiTYv5JA5pFzjr9eMjAtxYaAGRMDu++64pv+bmYWZGHVZ0TGCygzuwqTbth4Qph+FWWsEVnZ1raSn8ELeIaHoqH+b3DQf1ohHy4lKssewKFMJekbLn8IqAgmj6KXd9rdBMw/D3ZpO3Vt9WMK/Rhdxvqn3thEZon+3+9lJixrfeMqmuwOsYUutvwfTzyJTRo+Hpg0GAlhFbzQe49pG+yRVBzaDrMNr/lI/2NF7MX/5D5vmM7ihCx4QVI3nglg/mWdU+NfMXFz5a/qmpvsrbAvVZt+vay3jbltT8XZjRHU3iQY2pofkiclvCUL4S4Ao53CKTTHoMcksS4QRhSAwtGSOfVgpTSSonj26Cpn0lVc14rJktgUo9UL2eOVSqcgl6i8T3GGWzvAF5HZMK6R/2Ha/RKcHmmPzZZbaBgMszMlER4VDy6/+XCxEYICmRYbcXfF0YiK12MBg=
