@@ -41,6 +41,22 @@ compile 'org.aaronhe:threetenbp-gson-adapter:1.0.0'
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository](https://oss.sonatype.org/content/repositories/snapshots/).
 
+If your project uses a library other than [threetenbp](https://github.com/ThreeTen/threetenbp) which actually provides the ThreeTen Backport, like [ThreeTenABP](https://github.com/JakeWharton/ThreeTenABP), you need to exclude threetenbp library from the dependency. Otherwise `UNEXPECTED TOP-LEVEL EXCEPTION: com.android.dex.DexException: Multiple dex files define Lorg/threeten/bp/Clock` will be thrown.
+
+```groovy
+compile('org.aaronhe:threetenbp-gson-adapter:1.0.0') {
+  exclude module: 'threetenbp'
+}
+```
+
+Or set `transitive` to `false`:
+
+```groovy
+compile('org.aaronhe:threetenbp-gson-adapter:1.0.0') {
+  transitive = false
+}
+```
+
 License
 -------
 
