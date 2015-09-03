@@ -1,4 +1,4 @@
-group 'org.aaronhe.threetenbp-gson-adapter'
+group 'org.aaronhe'
 version '1.0.0-SNAPSHOT'
 
 apply plugin: 'java'
