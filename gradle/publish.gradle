@@ -1,0 +1,43 @@
+apply plugin: 'com.bmuschko.nexus'
+
+modifyPom {
+    project {
+        name POM_NAME
+        description POM_DESCRIPTION
+        url POM_URL
+
+        scm {
+            url POM_SCM_URL
+            connection POM_SCM_CONNECTION
+            developerConnection POM_SCM_DEV_CONNECTION
+        }
+
+        licenses {
+            license {
+                name POM_LICENCE_NAME
+                url POM_LICENCE_URL
+                distribution POM_LICENCE_DIST
+            }
+        }
+
+        developers {
+            developer {
+                id POM_DEVELOPER_ID
+                name POM_DEVELOPER_NAME
+                email POM_DEVELOPER_EMAIL
+            }
+        }
+    }
+}
+
+extraArchive {
+    sources = false
+    tests = true
+    javadoc = false
+}
+
+nexus {
+    sign = true
+    repositoryUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
+    snapshotRepositoryUrl = 'https://oss.sonatype.org/content/repositories/snapshots'
+}
