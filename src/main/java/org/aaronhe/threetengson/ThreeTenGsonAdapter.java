@@ -21,47 +21,33 @@ public class ThreeTenGsonAdapter {
     private ThreeTenGsonAdapter() {
     }
 
-    private static final Type INSTANT_TYPE_TOKEN = new TypeToken<Instant>() {}.getType();
-
-    private static final Type LOCAL_DATE_TYPE = new TypeToken<LocalDate>() {}.getType();
-
-    private static final Type LOCAL_DATE_TIME_TYPE = new TypeToken<LocalDateTime>() {}.getType();
-
-    private static final Type LOCAL_TIME_TYPE = new TypeToken<LocalTime>(){}.getType();
-
-    private static final Type OFFSET_DATE_TIME_TYPE = new TypeToken<OffsetDateTime>() {}.getType();
-
-    private static final Type OFFSET_TIME_TYPE = new TypeToken<OffsetTime>() {}.getType();
-
-    private static final Type ZONED_DATE_TIME_TYPE = new TypeToken<ZonedDateTime>() {}.getType();
-
 
     public static GsonBuilder registerInstant(GsonBuilder gsonBuilder) {
-        return gsonBuilder.registerTypeAdapter(INSTANT_TYPE_TOKEN, new InstantConverter());
+        return gsonBuilder.registerTypeAdapter(Instant.class, new InstantConverter());
     }
 
     public static GsonBuilder registerLocalDate(GsonBuilder gsonBuilder) {
-        return gsonBuilder.registerTypeAdapter(LOCAL_DATE_TYPE, new LocalDateConverter());
+        return gsonBuilder.registerTypeAdapter(LocalDate.class, new LocalDateConverter());
     }
 
     public static GsonBuilder registerLocalDateTime(GsonBuilder gsonBuilder) {
-        return gsonBuilder.registerTypeAdapter(LOCAL_DATE_TIME_TYPE, new LocalDateTimeConverter());
+        return gsonBuilder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeConverter());
     }
 
     public static GsonBuilder registerLocalTime(GsonBuilder gsonBuilder) {
-        return gsonBuilder.registerTypeAdapter(LOCAL_TIME_TYPE, new LocalTimeConverter());
+        return gsonBuilder.registerTypeAdapter(LocalTime.class, new LocalTimeConverter());
     }
 
     public static GsonBuilder registerOffsetDateTime(GsonBuilder gsonBuilder) {
-        return gsonBuilder.registerTypeAdapter(OFFSET_DATE_TIME_TYPE, new OffsetDateTimeConverter());
+        return gsonBuilder.registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeConverter());
     }
 
     public static GsonBuilder registerOffsetTime(GsonBuilder gsonBuilder) {
-        return gsonBuilder.registerTypeAdapter(OFFSET_TIME_TYPE, new OffsetTimeConverter());
+        return gsonBuilder.registerTypeAdapter(OffsetTime.class, new OffsetTimeConverter());
     }
 
     public static GsonBuilder registerZonedDateTime(GsonBuilder gsonBuilder) {
-        return gsonBuilder.registerTypeAdapter(ZONED_DATE_TIME_TYPE, new ZonedDateTimeConverter());
+        return gsonBuilder.registerTypeAdapter(ZonedDateTime.class, new ZonedDateTimeConverter());
     }
 
     /**
