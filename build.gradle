@@ -1,5 +1,5 @@
-group 'org.aaronhe'
-version '1.0.1-SNAPSHOT'
+group GROUP
+version VERSION_NAME
 
 apply plugin: 'java'
 
