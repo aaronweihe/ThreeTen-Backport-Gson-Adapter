@@ -12,10 +12,10 @@ Use one or some of static methods in `ThreeTenGsonAdapter` to register type adap
 
 For example, if you'd like `Gson` to serialize/deserialize `LocalTime`, register `LocalTime` using `ThreeTenGsonAdapter` like this:
 
-````java
+```java
 GsonBuilder builder = new GsonBuilder();
 Gson gson = ThreeTenGsonAdapter.registerLocalTime(builder).create();
-````
+```
 
 If you need all of the supported types, there's a convenient method: `ThreeTenGsonAdapter.registerAll()`.
 
@@ -24,7 +24,7 @@ Build
 
 To build:
 
-````bash
+```
 $ git clone git@github.com:aaronhe42/ThreeTen-Backport-Gson-Adapter.git
 $ cd ThreeTen-Backport-Gson-Adapter/
 $ ./gradlew build
