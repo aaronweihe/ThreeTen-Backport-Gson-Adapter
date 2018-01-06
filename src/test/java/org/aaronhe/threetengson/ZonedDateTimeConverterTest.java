@@ -31,7 +31,7 @@ public class ZonedDateTimeConverterTest {
     public void testDeserialization() {
         String json = "\"2010-08-20T10:43:46+08:00[Asia/Shanghai]\"";
 
-        ZonedDateTime zonedDateTime = gson.fromJson("\"2010-08-20T10:43:46+08:00[Asia/Shanghai]\"", ZonedDateTime.class);
+        ZonedDateTime zonedDateTime = gson.fromJson(json, ZonedDateTime.class);
 
         assertEquals(zonedDateTime, ZonedDateTime.parse("2010-08-20T10:43:46+08:00[Asia/Shanghai]"));
     }
